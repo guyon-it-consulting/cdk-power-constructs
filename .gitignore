@@ -20,3 +20,4 @@ custom-resource-handlers/dist
 lib/generated
 coverage/
 custom-resource-handlers/coverage/
+.nyc_output/
