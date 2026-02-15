@@ -65,14 +65,13 @@
   },
   "exports": {
     ".": "./lib/index.js",
-    "./glue": "./lib/glue/index.js",
-    "./glue/*": "./lib/glue/*/index.js"
+    "./glue": "./lib/glue/index.js"
   },
   "devDependencies": {
     "@types/jest": "^29.5.14",
     "@types/node": "^20.19.24",
     "aws-cdk-lib": "2.238.0",
-    "constructs": "10.0.0",
+    "constructs": "^10.0.0",
     "jest": "^29.7.0",
     "jsii": "^5.7.10",
     "jsii-pacmak": "^1.108.0",
