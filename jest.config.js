@@ -1,9 +1,10 @@
 module.exports = {
   preset: 'ts-jest',
   testEnvironment: 'node',
-  roots: ['<rootDir>/test'],
+  roots: ['<rootDir>/test', '<rootDir>/custom-resource-handlers/test'],
   testMatch: ['**/*.test.ts'],
   coverageProvider: 'v8',
+  moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx', 'json'],
   transform: {
     '^.+\\.tsx?$': ['ts-jest', {
       tsconfig: {
@@ -13,18 +14,31 @@ module.exports = {
     }]
   },
   collectCoverageFrom: [
-    '<rootDir>/lib/**/*.ts',
-    '!<rootDir>/lib/**/*.d.ts',
-    '!<rootDir>/lib/**/*.generated.ts',
-    '!<rootDir>/lib/index.ts',
+    'lib/**/*.ts',
+    'custom-resource-handlers/lib/**/*.ts',
+    '!**/*.d.ts',
+    '!**/*.generated.ts',
+    '!**/node_modules/**',
+    '!**/dist/**',
+    '!lib/index.ts',
+    '!custom-resource-handlers/lib/**/handler.ts',
   ],
   coveragePathIgnorePatterns: [
     '/node_modules/',
+    '/dist/',
     '\\.d\\.ts$',
     '\\.generated\\.ts$',
   ],
-  // Note: Coverage thresholds removed for CDK constructs
-  // CDK construct tests are integration tests that build entire stacks
-  // Coverage metrics don't accurately reflect test quality for constructs
-  // Focus on test scenario coverage instead
+  coverageThreshold: {
+    global: {
+      branches: 35,
+      statements: 55,
+    },
+    './custom-resource-handlers/lib/**/*.ts': {
+      branches: 70,
+      functions: 70,
+      lines: 70,
+      statements: 70,
+    },
+  },
 };

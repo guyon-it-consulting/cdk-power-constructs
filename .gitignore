@@ -18,4 +18,5 @@ website/static/api
 custom-resource-handlers/node_modules
 custom-resource-handlers/dist
 lib/generated
+coverage/
 custom-resource-handlers/coverage/
