@@ -1,1 +1,1 @@
-export * from './glue-resource-policy-statement.construct.js';
+export * from './glue-resource-policy-statement.construct';

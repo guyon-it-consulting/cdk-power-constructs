@@ -90,7 +90,10 @@
   },
   "stability": "experimental",
   "files": [
-    "lib",
+    "lib/**/*.js",
+    "lib/**/*.d.ts",
+    "lib/**/*.d.ts.map",
+    "lib/**/*.js.map",
     "dist",
     ".jsii",
     "custom-resource-handlers/dist"
