@@ -5,7 +5,8 @@
   "description": "CDK Power Constructs Custom Resource Handlers",
   "scripts": {
     "build": "tsc && tsx scripts/generate.ts",
-    "test": "jest"
+    "test": "jest",
+    "test:coverage": "jest --coverage"
   },
   "devDependencies": {
     "@types/node": "^20.0.0",

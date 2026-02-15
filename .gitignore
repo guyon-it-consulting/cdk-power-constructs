@@ -3,6 +3,8 @@ node_modules
 *.d.ts
 *.d.ts.map
 *.js.map
+!jest.config.js
+!.eslintrc.js
 dist/
 cdk.out/
 .jsii
@@ -16,3 +18,5 @@ website/static/api
 custom-resource-handlers/node_modules
 custom-resource-handlers/dist
 lib/generated
+coverage/
+custom-resource-handlers/coverage/
