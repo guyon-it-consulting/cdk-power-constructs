@@ -8,6 +8,8 @@ updates:
     labels:
       - "dependencies"
       - "github-actions"
+    # Auto-merge minor and patch updates
+    open-pull-requests-limit: 5
 
   # npm dependencies (root)
   - package-ecosystem: "npm"
@@ -23,6 +25,11 @@ updates:
         update-types: ["version-update:semver-major"]
       - dependency-name: "constructs"
         update-types: ["version-update:semver-major"]
+      - dependency-name: "eslint"
+        update-types: ["version-update:semver-major"]
+      - dependency-name: "@types/node"
+        update-types: ["version-update:semver-major"]
+    open-pull-requests-limit: 10
 
   # npm dependencies (custom-resource-handlers)
   - package-ecosystem: "npm"
@@ -33,6 +40,10 @@ updates:
       - "dependencies"
       - "npm"
       - "handlers"
+    ignore:
+      - dependency-name: "@types/node"
+        update-types: ["version-update:semver-major"]
+    open-pull-requests-limit: 10
 
   # npm dependencies (website)
   - package-ecosystem: "npm"
@@ -43,3 +54,7 @@ updates:
       - "dependencies"
       - "npm"
       - "documentation"
+    ignore:
+      - dependency-name: "typescript"
+        update-types: ["version-update:semver-major"]
+    open-pull-requests-limit: 10
