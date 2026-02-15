@@ -1,0 +1,45 @@
+version: 2
+updates:
+  # GitHub Actions
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+    labels:
+      - "dependencies"
+      - "github-actions"
+
+  # npm dependencies (root)
+  - package-ecosystem: "npm"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+    labels:
+      - "dependencies"
+      - "npm"
+    ignore:
+      # Ignore major version updates for CDK (manual review needed)
+      - dependency-name: "aws-cdk-lib"
+        update-types: ["version-update:semver-major"]
+      - dependency-name: "constructs"
+        update-types: ["version-update:semver-major"]
+
+  # npm dependencies (custom-resource-handlers)
+  - package-ecosystem: "npm"
+    directory: "/custom-resource-handlers"
+    schedule:
+      interval: "weekly"
+    labels:
+      - "dependencies"
+      - "npm"
+      - "handlers"
+
+  # npm dependencies (website)
+  - package-ecosystem: "npm"
+    directory: "/website"
+    schedule:
+      interval: "weekly"
+    labels:
+      - "dependencies"
+      - "npm"
+      - "documentation"
