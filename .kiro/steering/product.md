@@ -1,25 +1,47 @@
+---
+inclusion: always
+---
+
 # Product Overview
 
 ## Purpose
 
-This is a CDK TypeScript Construct Library that provides reusable infrastructure components for AWS Cloud Development Kit (CDK) applications. The library enables developers to quickly compose and deploy AWS infrastructure using pre-built, tested constructs.
+CDK Power Constructs is an open-source AWS CDK construct library providing opinionated, battle-tested solutions for common infrastructure, data, and AI/ML challenges. The library solves real-world problems that AWS CDK doesn't address out-of-the-box, particularly around cross-account access, resource policies, and service integrations.
 
 ## Target Users
 
-- AWS CDK developers building cloud infrastructure
-- DevOps engineers creating reusable infrastructure patterns
-- Teams standardizing their AWS infrastructure deployments
+- **AWS CDK Developers** - Building production infrastructure with AWS CDK
+- **Data Engineers** - Implementing Lake Formation and cross-account data sharing
+- **Platform Teams** - Standardizing infrastructure patterns across organizations
+- **DevOps Engineers** - Managing multi-account AWS environments
 
 ## Key Features
 
-- Reusable CDK constructs for common AWS patterns
-- Type-safe infrastructure definitions using TypeScript
-- Configurable construct properties for flexibility
-- Integration with AWS services (SNS, SQS, etc.)
+### Current Constructs
+
+**GlueResourcePolicyStatement** - Manages individual statements in AWS Glue Data Catalog resource policy
+- Solves multi-stack policy management (single policy per account/region)
+- Enables cross-account access and Lake Formation integration
+- Uses custom resources with Lambda handlers for policy manipulation
+- Implements singleton pattern to avoid resource conflicts
+
+### Design Philosophy
+
+- **Opinionated** - Battle-tested decisions baked in
+- **Problem-Focused** - Solves specific pain points, not generic wrappers
+- **Production-Ready** - Comprehensive testing and error handling
+- **Multi-Language** - Available in TypeScript, Python, Java, .NET, Go
 
 ## Business Objectives
 
-- Accelerate infrastructure development through reusable components
-- Ensure consistency across infrastructure deployments
-- Reduce boilerplate code in CDK applications
-- Provide well-tested, production-ready infrastructure patterns
+- **Accelerate Development** - Solve complex problems with simple APIs
+- **Reduce Errors** - Encapsulate best practices and error handling
+- **Enable Sharing** - Cross-account and cross-region patterns
+- **Community-Driven** - Open-source with clear contribution guidelines
+
+## Success Metrics
+
+- Adoption across multiple AWS accounts/organizations
+- Reduction in custom resource boilerplate
+- Community contributions and feedback
+- Documentation quality and examples

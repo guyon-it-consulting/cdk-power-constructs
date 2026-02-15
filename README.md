@@ -6,6 +6,7 @@
 
 <p align="center">
   <a href="https://github.com/guyon-it-consulting/cdk-power-constructs/actions/workflows/build.yml"><img src="https://github.com/guyon-it-consulting/cdk-power-constructs/actions/workflows/build.yml/badge.svg" alt="Build Status"/></a>
+  <a href="https://codecov.io/gh/guyon-it-consulting/cdk-power-constructs"><img src="https://codecov.io/gh/guyon-it-consulting/cdk-power-constructs/branch/main/graph/badge.svg" alt="Coverage"/></a>
   <a href="https://www.npmjs.com/package/cdk-power-constructs"><img src="https://badge.fury.io/js/cdk-power-constructs.svg" alt="npm version"/></a>
   <a href="https://pypi.org/project/cdk-power-constructs/"><img src="https://badge.fury.io/py/cdk-power-constructs.svg" alt="PyPI version"/></a>
   <a href="https://search.maven.org/artifact/fr.guyon-it-consulting/cdk-power-constructs"><img src="https://img.shields.io/maven-central/v/fr.guyon-it-consulting/cdk-power-constructs.svg" alt="Maven Central"/></a>

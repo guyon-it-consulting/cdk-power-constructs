@@ -31,11 +31,15 @@ Fixes #(issue number)
 
 <!-- Describe the tests you ran to verify your changes -->
 
-- [ ] Unit tests pass (`npm test`)
-- [ ] Handler tests pass (`npm run test:handlers`)
-- [ ] Construct tests pass (`npm run test:constructs`)
+**Test Results:**
+- [ ] All tests pass (`npm test`)
+- [ ] Coverage thresholds met (`npm run test:coverage`)
 - [ ] Manual testing performed
 - [ ] Added new tests for new functionality
+
+**Coverage:**
+- Construct coverage: __%
+- Handler coverage: __%
 
 ### Test Configuration
 
@@ -46,20 +50,29 @@ Fixes #(issue number)
 ## Code Quality
 
 - [ ] My code follows the project's code style
+- [ ] No linting errors (`npm run lint`)
+- [ ] Code is formatted (`npm run format`)
+- [ ] Build succeeds (`npm run build`)
 - [ ] I have performed a self-review of my code
 - [ ] I have commented my code, particularly in hard-to-understand areas
-- [ ] I have made corresponding changes to the documentation
 - [ ] My changes generate no new warnings
-- [ ] I have added tests that prove my fix is effective or that my feature works
-- [ ] New and existing unit tests pass locally with my changes
 
 ## Documentation
 
-- [ ] Updated README.md (if needed)
+- [ ] Updated README.md (if user-facing change)
 - [ ] Updated CHANGELOG.md
-- [ ] Updated API documentation (JSDoc comments)
+- [ ] Updated API documentation (TSDoc comments)
 - [ ] Updated website documentation (if needed)
 - [ ] Added code examples
+
+## jsii Compatibility
+
+<!-- For changes to public APIs -->
+
+- [ ] No generics in public interfaces
+- [ ] No union types in public interfaces
+- [ ] All public APIs documented with TSDoc
+- [ ] Tested multi-language compatibility (if applicable)
 
 ## Breaking Changes
 
@@ -83,6 +96,6 @@ Fixes #(issue number)
 ## Checklist
 
 - [ ] I have read the [CONTRIBUTING](../CONTRIBUTING.md) guidelines
-- [ ] I have updated the version number (if applicable)
 - [ ] I have tested this in a real CDK application
-- [ ] I have verified multi-language compatibility (if applicable)
+- [ ] My commit messages follow conventional commits format
+- [ ] I have verified that my changes work with the latest CDK version
