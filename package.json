@@ -1,24 +1,89 @@
 {
   "name": "cdk-power-constructs",
-  "version": "0.1.0",
+  "version": "0.1.12",
+  "description": "Reusable AWS CDK constructs for common infrastructure patterns",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
   "scripts": {
-    "build": "tsc",
-    "watch": "tsc -w",
-    "test": "jest"
+    "build": "npm run build:handlers && jsii",
+    "build:handlers": "cd custom-resource-handlers && npm install && npm run build",
+    "watch": "jsii -w",
+    "test": "npm run test:handlers && npm run test:constructs",
+    "test:handlers": "cd custom-resource-handlers && npm test",
+    "test:constructs": "jest",
+    "package": "jsii-pacmak",
+    "docs": "npm run docs:api && npm run docs:build",
+    "docs:api": "typedoc --out website/static/api/typescript",
+    "docs:build": "cd website && npm run build",
+    "docs:dev": "cd website && npm start"
+  },
+  "author": {
+    "name": "Jérôme GUYON",
+    "email": "jerome.guyon@guyon-it-consulting.com"
+  },
+  "license": "Apache-2.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/guyon-it-consulting/cdk-power-constructs.git"
+  },
+  "keywords": [
+    "awscdk",
+    "aws-cdk",
+    "cdk",
+    "constructs"
+  ],
+  "jsii": {
+    "outdir": "dist",
+    "targets": {
+      "python": {
+        "distName": "cdk-power-constructs",
+        "module": "cdk_power_constructs"
+      },
+      "java": {
+        "package": "fr.guyonitconsulting.cdkpowerconstructs",
+        "maven": {
+          "groupId": "fr.guyon-it-consulting",
+          "artifactId": "cdk-power-constructs"
+        }
+      },
+      "dotnet": {
+        "namespace": "GuyonItConsulting.CdkPowerConstructs",
+        "packageId": "GuyonItConsulting.CdkPowerConstructs"
+      },
+      "go": {
+        "moduleName": "github.com/guyon-it-consulting/cdk-power-constructs-go"
+      }
+    },
+    "tsc": {
+      "outDir": "lib",
+      "rootDir": "lib"
+    }
   },
   "devDependencies": {
-    "@types/jest": "^30",
+    "@types/jest": "^29.5.14",
     "@types/node": "^20.19.24",
-    "aws-cdk-lib": "^2.237.1",
-    "constructs": "^10.0.0",
-    "jest": "^30",
-    "ts-jest": "^29",
-    "typescript": "~5.9.3"
+    "aws-cdk-lib": "2.238.0",
+    "constructs": "10.0.0",
+    "jest": "^29.7.0",
+    "jsii": "^5.7.10",
+    "jsii-pacmak": "^1.108.0",
+    "ts-jest": "^29.2.5",
+    "typedoc": "^0.28.17",
+    "typedoc-theme-hierarchy": "^6.0.0",
+    "typescript": "~5.7.2"
   },
   "peerDependencies": {
-    "aws-cdk-lib": "^2.237.1",
+    "aws-cdk-lib": "^2.238.0",
     "constructs": "^10.0.0"
-  }
+  },
+  "overrides": {
+    "@aws-cdk/cloud-assembly-schema": "^48.20.0"
+  },
+  "stability": "experimental",
+  "files": [
+    "lib",
+    "dist",
+    ".jsii",
+    "custom-resource-handlers/dist"
+  ]
 }

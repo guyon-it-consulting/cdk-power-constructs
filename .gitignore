@@ -1,8 +1,18 @@
-*.js
-!jest.config.js
-*.d.ts
 node_modules
-
-# CDK asset staging directory
-.cdk.staging
-cdk.out
+*.js
+*.d.ts
+*.d.ts.map
+*.js.map
+dist/
+cdk.out/
+.jsii
+tsconfig.tsbuildinfo
+/tsconfig.json
+.idea
+/docs/
+website/build
+website/.docusaurus
+website/static/api
+custom-resource-handlers/node_modules
+custom-resource-handlers/dist
+lib/generated
