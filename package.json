@@ -1,6 +1,6 @@
 {
   "name": "cdk-power-constructs",
-  "version": "0.1.14",
+  "version": "0.1.15",
   "description": "Reusable AWS CDK constructs for common infrastructure patterns",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
