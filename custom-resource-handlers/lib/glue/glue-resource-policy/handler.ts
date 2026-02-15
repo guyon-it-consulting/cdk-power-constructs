@@ -1,5 +1,6 @@
 import type { CloudFormationCustomResourceEvent } from 'aws-lambda';
 import { Glue, EnableHybridValues } from '@aws-sdk/client-glue';
+import { upsertStatement, removeStatement, PolicyDocument } from './policy-utils';
 
 const glue = new Glue({});
 
@@ -7,11 +8,6 @@ interface ResourceProperties {
   Sid: string;
   Statement: string;
   EnableHybrid?: string | boolean;
-}
-
-interface PolicyDocument {
-  Version: string;
-  Statement: Array<Record<string, any>>;
 }
 
 export async function handler(
@@ -68,21 +64,4 @@ async function getExistingPolicy(): Promise<PolicyDocument> {
     }
     throw error;
   }
-}
-
-function upsertStatement(
-  policy: PolicyDocument,
-  sid: string,
-  statement: Record<string, any>
-): PolicyDocument {
-  const statements = policy.Statement.filter((s) => s.Sid !== sid);
-  statements.push({ ...statement, Sid: sid });
-  return { ...policy, Statement: statements };
-}
-
-function removeStatement(policy: PolicyDocument, sid: string): PolicyDocument {
-  return {
-    ...policy,
-    Statement: policy.Statement.filter((s) => s.Sid !== sid),
-  };
 }

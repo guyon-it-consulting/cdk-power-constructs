@@ -1,4 +1,4 @@
-import { upsertStatement, removeStatement } from '../../../../lib/glue/glue-resource-policy/policy-utils';
+import { upsertStatement, removeStatement } from '../../../lib/glue/glue-resource-policy/policy-utils';
 
 describe('Glue Policy Handler', () => {
   describe('upsertStatement', () => {
