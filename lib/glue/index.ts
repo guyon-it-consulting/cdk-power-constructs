@@ -1,1 +1,1 @@
-export * from './glue-resource-policy';
+export * from './glue-resource-policy/index.js';

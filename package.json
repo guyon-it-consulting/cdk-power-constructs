@@ -57,7 +57,16 @@
     "tsc": {
       "outDir": "lib",
       "rootDir": "lib"
-    }
+    },
+    "excludeTypescript": [
+      "test",
+      "custom-resource-handlers"
+    ]
+  },
+  "exports": {
+    ".": "./lib/index.js",
+    "./glue": "./lib/glue/index.js",
+    "./glue/*": "./lib/glue/*/index.js"
   },
   "devDependencies": {
     "@types/jest": "^29.5.14",
