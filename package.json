@@ -84,7 +84,7 @@
     "ts-jest": "^29.2.5",
     "typedoc": "^0.28.17",
     "typedoc-theme-hierarchy": "^6.0.0",
-    "typescript": "~5.9.3"
+    "typescript": "~6.0.2"
   },
   "peerDependencies": {
     "aws-cdk-lib": "^2.238.0",
