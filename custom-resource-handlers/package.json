@@ -16,7 +16,7 @@
     "typescript": "~5.9.3"
   },
   "dependencies": {
-    "@aws-sdk/client-glue": "^3.0.0",
+    "@aws-sdk/client-glue": "^3.1037.0",
     "@types/aws-lambda": "^8.10.0"
   }
 }
