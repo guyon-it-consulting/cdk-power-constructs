@@ -75,7 +75,7 @@
     "@typescript-eslint/eslint-plugin": "^8.20.0",
     "@typescript-eslint/parser": "^8.20.0",
     "aws-cdk-lib": "2.245.0",
-    "constructs": "^10.0.0",
+    "constructs": "10.5.0",
     "eslint": "^9.20.0",
     "jest": "^30.2.0",
     "jsii": "^5.7.10",
@@ -91,7 +91,7 @@
     "constructs": "^10.0.0"
   },
   "overrides": {
-    "@aws-cdk/cloud-assembly-schema": "^48.20.0"
+    "@aws-cdk/cloud-assembly-schema": "^53.0.0"
   },
   "stability": "experimental",
   "files": [
