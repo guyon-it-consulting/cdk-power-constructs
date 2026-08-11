@@ -68,3 +68,29 @@ go get github.com/guyon-it-consulting/cdk-power-constructs-go
 - 📖 Follow the [Getting Started](./getting-started) guide
 - 🔍 Browse the [API Reference](/api/typescript/)
 - 💡 Check out [Examples](./examples)
+
+## Available Constructs
+
+### Glue
+
+- **[GlueResourcePolicyStatement](./constructs/glue-resource-policy)** - Manage individual statements in the Glue Data Catalog resource policy
+
+### Route53
+
+- **[Route53 Cross-Account Records](./constructs/route53-cross-account)** - Create DNS records in hosted zones owned by other AWS accounts
+
+### Certificate Manager
+
+- **[Certificate Cross-Account DNS Validation](./constructs/certificate-cross-account)** - ACM certificates with DNS validation in cross-account Route53
+
+### S3 Tables
+
+- **[Zero-ETL DynamoDB to S3 Tables](./constructs/zero-etl-dynamodb-s3tables)** - Real-time analytics integration from DynamoDB
+
+### Lake Formation
+
+- **[Lake Formation](./constructs/lakeformation)** - Fluent API for permissions and declarative admin setup
+
+### Athena
+
+- **[Athena Workgroup](./constructs/athena-workgroup)** - L2 construct with integrated IAM grant methods
