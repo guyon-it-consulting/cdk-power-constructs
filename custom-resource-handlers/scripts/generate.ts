@@ -16,6 +16,18 @@ const handlers: Record<string, HandlerConfig> = {
     entryPoint: path.join(rootDir, 'lib/glue/glue-resource-policy/handler.ts'),
     runtime: 'NODEJS_LATEST',
   },
+  'route53-cross-account-handler': {
+    entryPoint: path.join(rootDir, 'lib/route53/route53-cross-account.handler.ts'),
+    runtime: 'NODEJS_22_X',
+  },
+  'certificate-cross-account-handler': {
+    entryPoint: path.join(rootDir, 'lib/certificate/certificate-cross-account.handler.ts'),
+    runtime: 'NODEJS_22_X',
+  },
+  'lakeformation-admin-handler': {
+    entryPoint: path.join(rootDir, 'lib/lakeformation/lakeformation-admin.handler.ts'),
+    runtime: 'NODEJS_22_X',
+  },
 };
 
 async function main() {
@@ -70,15 +82,25 @@ async function main() {
     }
 
     // Generate .generated.ts file for importing in constructs
+    // Read the bundled code and create an inline constant
+    const bundledCode = fs.readFileSync(outfile, 'utf-8');
+    const escapedCode = bundledCode
+      .replace(/\\/g, '\\\\')
+      .replace(/`/g, '\\`')
+      .replace(/\$/g, '\\$');
+
+    const constName = name.replace(/-/g, '_').toUpperCase();
+
     const generatedContent = `// Generated file - do not edit
-import * as path from 'path';
 import * as lambda from 'aws-cdk-lib/aws-lambda';
 
+export const ${constName} = \`${escapedCode}\`;
+
 export function getHandlerCode(): lambda.Code {
-  return lambda.Code.fromAsset(path.join(__dirname, '..', '..', 'custom-resource-handlers', 'dist'));
+  return lambda.Code.fromInline(${constName});
 }
 
-export const HANDLER_NAME = '${name}.handler';
+export const HANDLER_NAME = 'index.handler';
 export const RUNTIME = lambda.Runtime.${config.runtime};
 `;
 
