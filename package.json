@@ -67,7 +67,12 @@
   },
   "exports": {
     ".": "./lib/index.js",
-    "./glue": "./lib/glue/index.js"
+    "./glue": "./lib/glue/index.js",
+    "./route53": "./lib/route53/index.js",
+    "./certificate": "./lib/certificate/index.js",
+    "./s3tables": "./lib/s3tables/index.js",
+    "./lakeformation": "./lib/lakeformation/index.js",
+    "./athena": "./lib/athena/index.js"
   },
   "devDependencies": {
     "@types/jest": "^30.0.0",
