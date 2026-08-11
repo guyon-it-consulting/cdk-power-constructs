@@ -7,7 +7,7 @@
     "build": "tsc && tsx scripts/generate.ts"
   },
   "devDependencies": {
-    "@types/node": "^20.0.0",
+    "@types/node": "^20.19.43",
     "@types/jest": "^30.0.0",
     "esbuild": "^0.28.0",
     "jest": "^30.2.0",
