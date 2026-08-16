@@ -16,7 +16,7 @@
     "typescript": "~5.9.3"
   },
   "dependencies": {
-    "@aws-sdk/client-acm": "^3.1106.0",
+    "@aws-sdk/client-acm": "^3.1109.0",
     "@aws-sdk/client-glue": "^3.1106.0",
     "@aws-sdk/client-iam": "^3.1106.0",
     "@aws-sdk/client-lakeformation": "^3.1106.0",
